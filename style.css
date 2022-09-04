@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: poppins, sans-serif;
+}
+body {
+  background-color: #001a25;
+}
+#toggle {
+  position: fixed;
+  top: 40px;
+  right: 40px;
+  width: 60px;
+  height: 60px;
+  background-color: #03a9f4;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+#toggle::after {
+  position: absolute;
+  content: "";
+  width: 30px;
+  height: 2px;
+  background-color: #fff;
+  transition: 0.2s;
+  transform: translateY(5px);
+}
+#toggle::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  background-color: #fff;
+  transition: 0.2s;
+  transform: translateY(-5px);
+}
+#toggle.active::after {
+  transform: translateY(0) rotate(45deg);
+}
+#toggle.active::before {
+  transform: translateY(0) rotate(-45deg);
+}
+#sideBar {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 300px;
+  height: 100vh;
+  background-color: #003147;
+  transition: 0.5s;
+}
+#sideBar ul {
+  position: relative;
+  list-style: none;
+  margin-top: 50px;
+}
+#sideBar ul li {
+  display: inline-block;
+  width: 100%;
+  padding: 10px 40px;
+  cursor: pointer;
+}
+#sideBar ul li:hover {
+  background-color: #03a9f4;
+}
+#sideBar ul li a {
+  text-decoration: none;
+  font-size: 20px;
+  color: #fff;
+  letter-spacing: 2px;
+  user-select: none;
+}
+#sideBar.active {
+  left: 0;
+}
